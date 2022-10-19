@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import helloWorld
+from . import views
 
 urlpatterns = [
-    path('helloworld/', helloWorld)
+    path('helloworld/', views.helloWorld),
+    path('', views.taskList, name='task-list'),
+    path('yourname/<str:name>', views.yourName, name='your-name'),
 ]
